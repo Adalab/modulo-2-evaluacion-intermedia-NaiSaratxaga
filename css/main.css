@@ -2,6 +2,29 @@
   margin: 0;
 }
 
+.title {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin: 20px;
+  color: #4c95af;
+}
+.subtitle {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin: 20px;
+  color: #f78fcf;
+}
+
+.text {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin: 20px;
+  color: #8fcdf7;
+}
+
+.saldo {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin: 20px;
+  color: #32b646;
+}
+
 .container {
   width: 100%;
   padding-top: 200px;
@@ -12,6 +35,8 @@
 }
 
 .button {
+  color: white;
+  background-color: #94daf3;
   transition-duration: 0.4s;
 }
 
