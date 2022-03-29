@@ -9,7 +9,7 @@ const resultText = document.querySelector(".js_changeText");
 const playButton = document.querySelector(".js_btn");
 const resetButton = document.querySelector(".js_reset");
 const moneyInput = document.getElementById("money");
-const userMoneyText = document.getElementById("user-money");
+const userMoneyText = document.getElementById("user_money");
 
 userMoneyText.innerHTML = userMoney;
 resetButton.hidden = true;
@@ -22,27 +22,20 @@ function getRandomNumber(max) {
 btn.addEventListener("click", (event) => {
   event.preventDefault();
   const bet = moneyInput.value;
-  const valueFromThePlayer = parseInt(select.value);
+  const playerSelectedNumber = parseInt(select.value);
   const randomNumber = getRandomNumber(6);
-  if (valueFromThePlayer === randomNumber) {
+  if (playerSelectedNumber === randomNumber) {
     userMoney += bet * 2;
     resultText.innerHTML = "Has ganado el doble de lo apostado :)";
   } else {
-    userMoney -= bet;
+    userMoney = Math.max(userMoney - bet, 0);
     resultText.innerHTML = "Has perdido lo apostado :(";
   }
 
   userMoneyText.innerHTML = userMoney;
 
-  if (userMoney >= 200) {
+  if (userMoney <= 0 || userMoney >= 200) {
     playButton.hidden = true;
     resetButton.hidden = false;
-    alert("has llegado a 200");
-  }
-
-  if (userMoney <= 0) {
-    playButton.hidden = true;
-    resetButton.hidden = false;
-    alert("has perdido todo");
   }
 });
