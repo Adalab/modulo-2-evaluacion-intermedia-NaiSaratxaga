@@ -44,3 +44,7 @@
   background-color: #4c95af;
   color: white;
 }
+
+.hidden{
+  display: none;
+}
